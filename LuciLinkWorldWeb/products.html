@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>现货目录 — LuciLinkWorld</title>
+  <link rel="icon" href="assets/logo/lucilink-gold.svg?v=33" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/site.css?v=41" />
+</head>
+<body data-page="products">
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+    <header class="page-hero">
+      <div class="inner">
+        <div class="kicker" data-i18n="products.kicker"></div>
+        <h1 data-i18n="products.title"></h1>
+        <p data-i18n="products.lead"></p>
+      </div>
+    </header>
+    <section class="wrap">
+      <div class="filters" role="group">
+        <button type="button" data-filter="all" aria-pressed="true" data-i18n="products.all"></button>
+        <button type="button" data-filter="cases" aria-pressed="false" data-i18n="products.cases"></button>
+        <button type="button" data-filter="watch" aria-pressed="false" data-i18n="products.watch"></button>
+        <button type="button" data-filter="charging" aria-pressed="false" data-i18n="products.charging"></button>
+        <button type="button" data-filter="care" aria-pressed="false" data-i18n="products.care"></button>
+      </div>
+      <div class="grid-4" id="catalog" data-filter="all"></div>
+    </section>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="js/data.js?v=43"></script>
+  <script src="js/i18n.js?v=43"></script>
+  <script src="js/app.js?v=41"></script>
+</body>
+</html>
