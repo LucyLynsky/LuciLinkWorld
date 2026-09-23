@@ -1,4 +1,4 @@
-# 工作流名称：部署网站到 Cloudflare Pages
+# 工作流名称：部署网站到 Cloudflare
 name: Deploy to Cloudflare Pages
 
 on:
@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "LuciLinkWorldWeb/**"
+      - "wrangler.toml"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
@@ -19,18 +20,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - name: Prepare site files
-        run: |
-          test -f LuciLinkWorldWeb/index.html
-          mkdir -p dist
-          rsync -a \
-            --exclude 'scripts/' \
-            --exclude 'README.md' \
-            ./LuciLinkWorldWeb/ dist/
-
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=lucilinkworld --commit-dirty=true
+          command: deploy
