@@ -39,7 +39,7 @@ Personal profile cover (1640 × 624, upload this to Facebook):
 
 `assets/social/facebook-cover.png`
 
-Logo + intro copy + WeChat / WhatsApp QR. Same locked cyan palette. Rebuild: `python ../brandlogo/scripts/render_lucilink_kit.py facebook`.
+Logo + intro copy + website, WeChat, and WhatsApp QR. Same locked cyan palette. Rebuild: `python ../brandlogo/scripts/render_lucilink_kit.py facebook`.
 
 ## Local preview
 

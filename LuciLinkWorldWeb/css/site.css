@@ -1,37 +1,43 @@
 ﻿@font-face {
   font-family: "Barlow SC";
-  src: url("../assets/fonts/BarlowSemiCondensed-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/BarlowSemiCondensed-Regular.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Barlow SC";
-  src: url("../assets/fonts/BarlowSemiCondensed-Medium.ttf") format("truetype");
+  src: url("../assets/fonts/BarlowSemiCondensed-Medium.woff2") format("woff2");
   font-weight: 500;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Barlow SC";
-  src: url("../assets/fonts/BarlowSemiCondensed-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/BarlowSemiCondensed-Bold.woff2") format("woff2");
   font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "PuHuiTi";
-  src: url("../assets/fonts/AlibabaPuHuiTi-2-55-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/AlibabaPuHuiTi-2-55-Regular.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "PuHuiTi";
-  src: url("../assets/fonts/AlibabaPuHuiTi-2-65-Medium.ttf") format("truetype");
+  src: url("../assets/fonts/AlibabaPuHuiTi-2-65-Medium.woff2") format("woff2");
   font-weight: 500;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "PuHuiTi";
-  src: url("../assets/fonts/AlibabaPuHuiTi-2-85-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/AlibabaPuHuiTi-2-85-Bold.woff2") format("woff2");
   font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -70,7 +76,7 @@
 html { scroll-behavior: smooth; color-scheme: light; }
 html, body { margin: 0; }
 body {
-  font-family: "PuHuiTi", "Barlow SC", "Segoe UI", "PingFang SC", sans-serif;
+  font-family: "PuHuiTi", "Barlow SC", "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--sky);
   line-height: 1.6;
@@ -80,7 +86,7 @@ img { max-width: 100%; display: block; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; }
 h1, h2, h3, .latin {
-  font-family: "Barlow SC", "PuHuiTi", sans-serif;
+  font-family: "Barlow SC", "PuHuiTi", "PingFang SC", "Microsoft YaHei", sans-serif;
   letter-spacing: 0.01em;
 }
 h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.15; color: var(--ink); }
@@ -222,7 +228,7 @@ h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.15; color: var(--ink); 
   margin-bottom: 28px;
 }
 html[lang="en"] body {
-  font-family: "Barlow SC", "PuHuiTi", "Segoe UI", sans-serif;
+  font-family: "Barlow SC", "PuHuiTi", "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
@@ -651,7 +657,7 @@ html[lang="en"] body {
 }
 .float-btn svg { width: 24px; height: 24px; fill: currentColor; flex-shrink: 0; }
 .float-btn span {
-  font-family: "Barlow SC", "PuHuiTi", sans-serif;
+  font-family: "Barlow SC", "PuHuiTi", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;

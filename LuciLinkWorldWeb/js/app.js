@@ -130,7 +130,7 @@ const App = (() => {
           <span>Wechat</span>
         </button>
         <div class="float-pop">
-          <img src="assets/contact/wechat_large.png?v=40" alt="WeChat QR LuciLinkWorld">
+          <img data-src="assets/contact/wechat_large.png?v=42" alt="WeChat QR LuciLinkWorld" decoding="async">
           <p data-i18n="contact.floatWechat"></p>
         </div>
       </div>
@@ -140,14 +140,24 @@ const App = (() => {
           <span>Whatsapp</span>
         </button>
         <div class="float-pop">
-          <img src="assets/contact/whatsapp_large.png?v=40" alt="WhatsApp QR LuciLinkWorld">
+          <img data-src="assets/contact/whatsapp_large.png?v=42" alt="WhatsApp QR LuciLinkWorld" decoding="async">
           <p data-i18n="contact.floatWa"></p>
         </div>
       </div>`;
+    const loadFloatImage = (item) => {
+      item.querySelectorAll("img[data-src]").forEach((img) => {
+        if (!img.getAttribute("src")) img.src = img.dataset.src;
+      });
+    };
+    dock.querySelectorAll(".float-item").forEach((item) => {
+      item.addEventListener("pointerenter", () => loadFloatImage(item));
+      item.addEventListener("focusin", () => loadFloatImage(item));
+    });
     dock.querySelectorAll(".float-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         const item = btn.closest(".float-item");
+        loadFloatImage(item);
         const wasOpen = item.classList.contains("open");
         dock.querySelectorAll(".float-item").forEach((el) => el.classList.remove("open"));
         if (!wasOpen) item.classList.add("open");
@@ -165,7 +175,7 @@ const App = (() => {
     const cat = t(`cats.${item.category}`);
     return `
       <a class="card product-card" href="product.html?id=${item.id}">
-        <div class="thumb"><img src="${item.images[0]}" alt="${name}"></div>
+        <div class="thumb"><img src="${item.images[0]}" alt="${name}" loading="lazy" decoding="async"></div>
         <div class="meta">
           <span class="chip">${cat}</span>
           <h3>${name}</h3>
@@ -209,7 +219,7 @@ const App = (() => {
     const desc = t(`items.${item.id}.desc`);
     root.innerHTML = `
       <div class="detail-gallery">
-        ${item.images.map((src) => `<img src="${src}" alt="${name}" data-full="${src}">`).join("")}
+        ${item.images.map((src, index) => `<img src="${src}" alt="${name}" data-full="${src}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">`).join("")}
       </div>
       <div>
         <span class="chip">${t(`cats.${item.category}`)}</span>
@@ -237,7 +247,7 @@ const App = (() => {
     if (!root) return;
     root.innerHTML = SOURCE_GALLERY.map((shot) => `
       <a href="${shot.src}" data-full="${shot.src}">
-        <img src="${shot.src}" alt="${t("sourceCaps." + shot.key)}">
+        <img src="${shot.src}" alt="${t("sourceCaps." + shot.key)}" loading="lazy" decoding="async">
       </a>`).join("");
     root.querySelectorAll("a").forEach((a) => {
       a.addEventListener("click", (e) => {
